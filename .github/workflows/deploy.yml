@@ -92,6 +92,10 @@ jobs:
       - name: Make Gradle Executable
         run: chmod +x android/gradlew
 
+      - name: Accept Android SDK Licenses
+        run: |
+          yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses 2>/dev/null || true
+
       - name: Build Android APK with Gradle
         run: |
           cd android
