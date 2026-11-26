@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Noto+Sans:wght@400;500&display=swap&subset=vietnamese');
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Nunito', ui-sans-serif, system-ui, sans-serif;
+  --font-ipa: 'Noto Sans', 'Segoe UI', 'Lucida Sans Unicode', sans-serif;
+
+  --color-canvas: #f7f9fc;
+  --color-ink: #1f2a37;
+  --color-ink-soft: #4b5869;
+  --color-ink-muted: #8492a6;
+  --color-line: #e5eaf1;
+
+  --color-grass: #3dbe5a;
+  --color-grass-dark: #2e9a47;
+  --color-grass-soft: #e5f8ea;
+  --color-sky: #2f8cff;
+  --color-sky-dark: #1f6fd6;
+  --color-sky-soft: #e6f1ff;
+  --color-sun: #ff9f1c;
+  --color-sun-dark: #e08300;
+  --color-sun-soft: #fff2de;
+  --color-coral: #ff5a5f;
+  --color-coral-dark: #e03e44;
+  --color-coral-soft: #ffe8e9;
+  --color-grape: #8b5cf6;
+  --color-grape-dark: #6d3fe0;
+  --color-grape-soft: #f0eaff;
+  --color-rose: #ec4899;
+  --color-rose-dark: #c92f7c;
+  --color-rose-soft: #fde7f3;
+  --color-teal: #14b8a6;
+  --color-teal-dark: #0e9384;
+  --color-teal-soft: #ddf7f3;
+
+  --animate-shake: shake 0.35s ease-in-out;
+  --animate-pop: pop 0.3s ease-out;
+  --animate-rise: rise 0.35s ease-out;
+
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-6px); }
+    75% { transform: translateX(6px); }
+  }
+  @keyframes pop {
+    0% { transform: scale(0.96); }
+    60% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+  }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-sky);
+    outline-offset: 2px;
+    border-radius: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
